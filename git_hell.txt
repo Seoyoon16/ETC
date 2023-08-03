@@ -1,0 +1,58 @@
+git: version control system
+
+#command
+pwd: 현재 위치
+cd: 이동 ex) cd Documents/gitfth/
+mkdir: 디렉토리 생성
+git init: 현재 디렉토리를 버전관리한다
+ls -al
+
+vim f1.txt: vim이라는 프로그램으로 f1.txt파일을 편집하겠다
+i: insert, 입력모드
+esc: 입력모드 종료 후 명령어 입력 모드
+:wq: 작성한 내용 저장과 동시에 프로그램 종료
+cat f1.txt: f1.txt 확인
+
+git status: 저장소 상태 살펴보는 명령어
+git add f1.txt: 관리할 대상에 추가, 새로 생성한 파일은 git에게 이 명령어를 통해 추적하라고 말해주어야함,
+커밋 대기상태에 들어감
+
+버전: 어떤 작업이 완결된 상태
+
+git config --global user.name 닉네임, git config --global user.email 이메일: 작업자 명시, 한번만 해주면 됨
+
+git commit 후 버전 메세지 or 커밋 메세지 작성 (입력모드로 바꾼 후 작성)
+커밋 대기상태(stage area)에 있는 작업들만을 커밋, 커밋 완료시 버전이 됨
+
+// ---> 최초로 버전을 생성한 것
+
+git log: 버전 확인, 나가려면 q
+
+순서: vim f1.txt -> 수정 -> git add f1.txt -> git commit -> 커밋메세지 작성 -> :wq
+
+cp f1.txt f2.txt: copy f1.txt to create f2.txt
+
+stage: 커밋 대기 중인 파일들이 가는 곳
+repository: 커밋된 결과가 저장되는 곳, 저장소
+
+git log -p: 커밋과 커밋사이의 소스상의 차이점 확인 가능
+각각의 커밋은 고유한 아이디가 있음
+git log 커밋아이디: 해당 커밋 이전 로그만 보여줌
+git diff 커밋아이디1..커밋아이디2: 소스상의 차이점 보여줌
+git diff: 수정한 파일의 이전 내용과 현재 내용을 보여줌, 커밋전 작업한 내용 확인 용도
+
+컨트롤D: 터미널 종료
+
+커밋을 취소하는 명령: reset vs revert
+git reset 커밋아이디 --hard: 해당 커밋을 최신버전으로
+날린(?) 버전들 나중에 복구 가능, 보이지 않을 뿐 남아있음
+버전공유 후 reset하면 안됨
+
+gistory: 분석도구
+.git 디렉토리에서 명령어 실행
+localhost:8805에서 내용 확인 가능
+파일의 이름은 index에, 내용은 objects(객체)에
+
+객체 원리: sha1 방식으로 해시생성, 앞에 두자리 객체, 나머지 내용
+
+cp f1.txt d1/f1.txt: d1 디렉토리에 f1.txt 카피해서 생성
