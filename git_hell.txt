@@ -56,3 +56,6 @@ localhost:8805에서 내용 확인 가능
 객체 원리: sha1 방식으로 해시생성, 앞에 두자리 객체, 나머지 내용
 
 cp f1.txt d1/f1.txt: d1 디렉토리에 f1.txt 카피해서 생성
+
+git working directory vs index vs repository
+woring directory에서 add -> index file에 등록(staging area, cache), commit -> repository에 저장
