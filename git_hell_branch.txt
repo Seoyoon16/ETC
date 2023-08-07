@@ -1,1 +1,47 @@
 branch를 만든다: 작업이 분기되는 현상
+
+git commit -m "커밋메세지": 에디터를 켜지않고 바로 커밋메세지 작성 가능
+git commit -a: add + commit
+-> 아직 버전관리가 시작되지 않은 파일(한번도 add를 사용하지 않은)은 사용불가
+git ommit -am "커밋메세지": add + commit message + commit
+
+여러가지 케이스에 branch 사용
+ex) main과 test 분리
+
+git branch: 현재 브랜치 확인
+*master: 현재 master(기본브랜치)라는 branch를 쓰고 있다.
+
+git branch 브랜치이름: create new branch
+git checkout 브랜치이름: 해당 브랜치로 이동
+
+* CR : 현재 커서를 줄 올림 없이 가장 앞으로 옮기는 동작
+  LF : 커서는 그 자리에 그대로 둔 상황에서 종이만 한 줄 올려 줄을 바꾸는 동작
+  CRLF: 줄바꿈
+
+git log --branches --decorate: 브랜치별로 최신커밋 알려줌 + 현재 체크아웃된
+브랜치 알 수 있음(head)
+git log --branches --decorate --graph (--oneline): 분기상황을 시각화해서 보여줌
+
+stree: 소스트리 명령어
+
+git log 브랜치1..브랜치2: 두개의 브랜치 비교, 브랜치1에는 없고 브랜치2에는 있는 것
+소스코드가 필요하면 git log -p b1..b2
+git diff b1..b2: 브랜치들의 현재상태 비교
+
+b1내용을 b2에 병합하기: b2로 체크아웃 한 후 git merge b1
+(merge 중 충돌상황(conflict) 발생할 수 있음)
+
+불필요한 브랜치 삭제: 기본브랜치로 돌아가서 git branch -d 브랜치이름
+
+stash: 감추다, 숨겨두다 // 한 branch에서 작업하던 내용이 다 끝나지 않았는데
+다른 브랜치에서 작업을 해야할 때 작업하던 내용을 잠시 숨겨두고 다른 브랜치로 체크아웃
+할 수 있음 // 워킹 디렉토리의 내용을 감춘다,
+버전관리가 되고 있는 파일(추적가능한)에 한해 사용가능
+
+git checkout -b 브랜치이름: 브랜치 생성 후 체크아웃까지
+git stash -> 명시적으로 삭제하지 않는 이상 기록에 계속 남아있어서 불러오기 가능
+가장 최신 stash가 불러와짐
+WIP: working in process
+git stash apply: 복원
+git stash drop: 최신 stash 삭제
+git stash pop == git stash apply; git stash drop;
