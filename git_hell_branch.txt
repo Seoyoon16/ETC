@@ -45,3 +45,16 @@ WIP: working in process
 git stash apply: 복원
 git stash drop: 최신 stash 삭제
 git stash pop == git stash apply; git stash drop;
+
+a. working directory = working tree = working copy
+b. index = staging area = cache
+c. repository = history = tree
+git reset --soft -> c
+          --mixed -> b, c
+          --hard -> a, b, c
+
+kdiff3 설치 (merge 해주는 도구)
+git config --global merge.tool kdiff3
+git mergetool
+
+merge & conflict ---> 3 way merge
