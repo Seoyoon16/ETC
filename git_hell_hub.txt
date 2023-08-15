@@ -1,0 +1,12 @@
+remote repository
+> back-up
+> cooperation
+
+git init 저장소이름: 지역저장소(자기가 커밋하는 곳) 생성
+지역저장소와 연결되는 원격저장소 -- 서로 다른 컴퓨터와 연결
+(부모 디렉토리에서) git init --bare 저장소이름
+: 저장소로서의 기능만을 수행할 수 있는 저장소 생성, 작업 불가
+git 저장소이름 add origin 경로
+git push: 작업내용을 원격저장소로 밀어넣을 때
+
+git clone 복제하려고하는_원격저장소_주소 저장할_디렉토리_이름

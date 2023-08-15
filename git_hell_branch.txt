@@ -58,3 +58,10 @@ git config --global merge.tool kdiff3
 git mergetool
 
 merge & conflict ---> 3 way merge
+Me Base Other 2way          3way
+A  A           ?(conflict)   
+B  B    B      B             B
+1  C    2      ?             ?
+   D    D      ?
+2 way merge: base 참고x
+3 way merge: base 참고o, better than 2 way merge
