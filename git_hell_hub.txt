@@ -10,3 +10,17 @@ git 저장소이름 add origin 경로
 git push: 작업내용을 원격저장소로 밀어넣을 때
 
 git clone 복제하려고하는_원격저장소_주소 저장할_디렉토리_이름
+
+a. github -> repository 생성
+b. git bash -> 버전관리할 디렉토리에서 git remote add origin 레포주소
+                                                      (origin 이라고 별칭한다)
+c. git remote: 확인용
+d. git push -u origin 브랜치이름
+(-u 로컬레포 원격레포 연결용으로 처음 한번만 사용)
+
+secure shell(ssh)
+ssh-keygen: 다른 컴퓨터로 접속할 수 있는 비밀번호 생성
+
+깃헙 협업 시 참고 (pull&push)
+https://blog.naver.com/soyfeliz729/223149246041
+https://sabarada.tistory.com/75
