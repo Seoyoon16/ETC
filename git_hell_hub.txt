@@ -24,3 +24,16 @@ ssh-keygen: 다른 컴퓨터로 접속할 수 있는 비밀번호 생성
 깃헙 협업 시 참고 (pull&push)
 https://blog.naver.com/soyfeliz729/223149246041
 https://sabarada.tistory.com/75
+https://docs.github.com/
+
+2 tag
+releases: 계속 바뀜 / tag: 항상 같음
+tag: 시간이 지난 후에도 그 버전이 어떤 커밋에 해당되는지 알 수 있음
+     특정한 커밋 아이디만을 가리킴
+git tag [tag_name ex) 1.0.0] [branch]
+annotated tag: 자세한 정보를 더 추가할 때 사용
+ex) git tag -a 1.1.1 -m "bug fix" sybranch
+git push --tag: transmit tag to server
+git tag -d [tag_name]: delete tag
+branch와 tag의 원리 내부 원리 동일,
+tag는 commit_id를 branch는 checkout한 브랜치의 최신 commit_id 를 가리킴
