@@ -37,3 +37,11 @@ git push --tag: transmit tag to server
 git tag -d [tag_name]: delete tag
 branch와 tag의 원리 내부 원리 동일,
 tag는 commit_id를 branch는 checkout한 브랜치의 최신 commit_id 를 가리킴
+
+병합하는 방법: merge vs rebase
+master(기본브랜치)와 feature(파생브랜치)가 공통으로 가지고 있는 commit == base(feature 입장에서)
+rebase: base를 바꾼다 -> feature가 파생된 master branch의 최신 커밋을 base로 바꾼다
+git checkout feature
+git rebase master
+history가 일렬로 나아가기 때문에 보기에 쉽다 / rebase는 어렵고 위험
+다른 사람과 공유하지 않은 커밋에 대해서만 rebase를 해야함
